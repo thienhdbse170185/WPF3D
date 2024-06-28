@@ -1,0 +1,436 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" x:Class="_3DExample.MainWindow"
+    WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        Title="MainWindow" MinHeight="600" MinWidth="600" RenderTransformOrigin="0.5,0.5">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources\Robot3dResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/background.png"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="Robot" Grid.ColumnSpan="1" Grid.RowSpan="2">
+            <Viewport3D ClipToBounds="True"
+            	IsHitTestVisible="False"
+            	RenderOptions.EdgeMode="Aliased" Margin="10">
+                <Viewport3D.Camera>
+                    <PerspectiveCamera FarPlaneDistance="100000"
+            			FieldOfView="55"
+            			LookDirection="0,5000,750"
+            			NearPlaneDistance="0.1"
+            			Position="0,-5000,500"
+            			UpDirection="0,0,1">
+                        <PerspectiveCamera.Transform>
+                            <RotateTransform3D>
+                                <RotateTransform3D.Rotation>
+                                    <AxisAngleRotation3D Angle="0" Axis="0,0,1" />
+                                </RotateTransform3D.Rotation>
+                            </RotateTransform3D>
+                        </PerspectiveCamera.Transform>
+                    </PerspectiveCamera>
+                </Viewport3D.Camera>
+                <ModelVisual3D x:Name="Robot1">
+                    <ModelVisual3D x:Name="Den_xung_quanh">
+                        <ModelVisual3D.Content>
+                            <AmbientLight x:Name="AmbientLight1" Color="#C0C0C0" />
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+                    <ModelVisual3D x:Name="Den_chinh">
+                        <ModelVisual3D.Content>
+                            <DirectionalLight x:Name="DirectionalLight1"
+            					Direction="0,0,-1"
+            					Color="#A0A0A0">
+                                <DirectionalLight.Transform>
+                                    <Transform3DGroup>
+                                        <TranslateTransform3D OffsetX="0"
+            								OffsetY="0"
+            								OffsetZ="0" />
+                                        <ScaleTransform3D ScaleX="1"
+            								ScaleY="1"
+            								ScaleZ="1" />
+                                        <RotateTransform3D d:EulerAngles="-40.016,16.242,-202.893">
+                                            <RotateTransform3D.Rotation>
+                                                <AxisAngleRotation3D Angle="195.776" Axis="0.199,0.309,-0.93" />
+                                            </RotateTransform3D.Rotation>
+                                        </RotateTransform3D>
+                                        <TranslateTransform3D OffsetX="0"
+            								OffsetY="0"
+            								OffsetZ="0" />
+                                        <TranslateTransform3D OffsetX="-693.349"
+            								OffsetY="-968.397"
+            								OffsetZ="2512.812" />
+                                    </Transform3DGroup>
+                                </DirectionalLight.Transform>
+                            </DirectionalLight>
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+                    <ModelVisual3D x:Name="De_robot1">
+                        <ModelVisual3D.Transform>
+                            <Transform3DGroup>
+                                <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                <ScaleTransform3D ScaleZ="1" ScaleY="1" ScaleX="1"/>
+                                <RotateTransform3D d:EulerAngles="0,0,-186.346">
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D Axis="0,0,-1" Angle="186.346"/>
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                                <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                <TranslateTransform3D OffsetX="536.245" OffsetY="-59.643"/>
+                            </Transform3DGroup>
+                        </ModelVisual3D.Transform>
+                        <ModelVisual3D.Content>
+                            <Model3DGroup>
+                                <GeometryModel3D Geometry="{StaticResource BaseGeometry3D}"
+            						Material="{StaticResource MaterialBase}"
+            						d:Bounds="-410.764129638672,-395.356536865234,-10,1136.43374633789,790,350" >
+                                    <GeometryModel3D.Transform>
+                                        <Transform3DGroup>
+                                            <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                            <ScaleTransform3D ScaleZ="1" ScaleY="1" ScaleX="1"/>
+                                            <RotateTransform3D d:EulerAngles="0,0,0">
+                                                <RotateTransform3D.Rotation>
+                                                    <AxisAngleRotation3D Axis="0,1,0" Angle="0"/>
+                                                </RotateTransform3D.Rotation>
+                                            </RotateTransform3D>
+                                            <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                            <TranslateTransform3D OffsetZ="3.497"/>
+                                        </Transform3DGroup>
+                                    </GeometryModel3D.Transform>
+                                </GeometryModel3D>
+                            </Model3DGroup>
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+                    <ModelVisual3D x:Name="De_robot2">
+                        <ModelVisual3D.Transform>
+                            <Transform3DGroup>
+                                <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                <ScaleTransform3D ScaleZ="1" ScaleY="1" ScaleX="1"/>
+                                <RotateTransform3D d:EulerAngles="0,0,-186.346">
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D Axis="0,0,-1" Angle="186.346"/>
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                                <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                <TranslateTransform3D OffsetX="564.245" OffsetY="-62.756" OffsetZ="-87.902"/>
+                            </Transform3DGroup>
+                        </ModelVisual3D.Transform>
+                        <ModelVisual3D.Content>
+                            <Model3DGroup>
+                                <GeometryModel3D Geometry="{StaticResource BaseGeometry3D}"
+            						Material="{StaticResource MaterialBase}"
+            						d:Bounds="-410.764129638672,-395.356536865234,-10,1136.43374633789,790,350" />
+                            </Model3DGroup>
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+                    <ModelVisual3D x:Name="De_robot3">
+                        <ModelVisual3D.Transform>
+                            <Transform3DGroup>
+                                <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                <ScaleTransform3D ScaleZ="1" ScaleY="1" ScaleX="1"/>
+                                <RotateTransform3D d:EulerAngles="0,0,-186.346">
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D Axis="0,0,-1" Angle="186.346"/>
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                                <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                <TranslateTransform3D OffsetX="600.997" OffsetY="-66.839" OffsetZ="-184.727"/>
+                            </Transform3DGroup>
+                        </ModelVisual3D.Transform>
+                        <ModelVisual3D.Content>
+                            <Model3DGroup>
+                                <GeometryModel3D Geometry="{StaticResource BaseGeometry3D}"
+            						Material="{StaticResource MaterialBase}"
+            						d:Bounds="-410.764129638672,-395.356536865234,-10,1136.43374633789,790,350" />
+                            </Model3DGroup>
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+
+                    <ModelVisual3D x:Name="Canh_tay_robot">
+                        <ModelVisual3D.Transform>
+                            <RotateTransform3D>
+                                <RotateTransform3D.Rotation>
+                                    <AxisAngleRotation3D Angle="{Binding Robot1Axis1}" Axis="0,0,1" />
+                                </RotateTransform3D.Rotation>
+                            </RotateTransform3D>
+                        </ModelVisual3D.Transform>
+
+                        <ModelVisual3D x:Name="Vai_robot">
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <GeometryModel3D x:Name="ShoulderGeo1"
+            							Geometry="{StaticResource ShoulderGeometry3D}"
+            							Material="{StaticResource MaterialOrange}"
+            							d:Bounds="-570.209411621094,-312.356536865234,203.5,919.457763671875,767,816.086303710938" />
+                                    <GeometryModel3D x:Name="ShoulderMotorGeo1"
+            							Geometry="{StaticResource ShoulderMotorGeometry3D}"
+            							Material="{StaticResource MaterialBlack}"
+            							d:Bounds="-90.7641448974609,-311.356536865234,416,180,180,269" />
+                                    <GeometryModel3D x:Name="LowerArmMotorGeo1"
+            							Geometry="{StaticResource LowerArmMotorGeometry3D}"
+            							Material="{StaticResource MaterialBlack}"
+            							d:Bounds="-410.764129638672,-391.856536865234,680,179.999984741211,268.999984741211,180" />
+                                    <GeometryModel3D x:Name="BaseMotor2Geo1"
+            							Geometry="{StaticResource BaseMotor2Geometry3D}"
+            							Material="{StaticResource MaterialBlack}"
+            							d:Bounds="-133.307189941406,15.1056575775146,422.753967285156,622.697143554688,374.537805557251,456.283996582031" />
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+
+                        <ModelVisual3D x:Name="Tay_robot1">
+                            <ModelVisual3D.Transform>
+                                <RotateTransform3D CenterX="-350" CenterZ="700">
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D Angle="{Binding Robot1Axis2}" Axis="0,1,0" />
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                            </ModelVisual3D.Transform>
+
+                            <ModelVisual3D x:Name="Khuy_tay1">
+                                <ModelVisual3D.Content>
+                                    <GeometryModel3D x:Name="LowerArmGeo1"
+            							Geometry="{StaticResource LowerArmGeometry3D}"
+            							Material="{StaticResource MaterialOrange}"
+            							/>
+                                </ModelVisual3D.Content>
+                            </ModelVisual3D>
+
+                            <ModelVisual3D x:Name="Khuy_tay2">
+                                <ModelVisual3D.Transform>
+                                    <RotateTransform3D CenterX="-320" CenterZ="1800">
+                                        <RotateTransform3D.Rotation>
+                                            <AxisAngleRotation3D Angle="{Binding Robot1Axis3}" Axis="0,1,0" />
+                                        </RotateTransform3D.Rotation>
+                                    </RotateTransform3D>
+                                </ModelVisual3D.Transform>
+
+                                <ModelVisual3D x:Name="Khop_tay">
+                                    <ModelVisual3D.Content>
+                                        <Model3DGroup>
+                                            <GeometryModel3D x:Name="UpperArm2Geo1"
+            									Geometry="{StaticResource UpperArm2Geometry3D}"
+            									Material="{StaticResource MaterialOrange}"
+            									d:Bounds="-673.651062011719,-339.251800537109,1626.39086914063,576.112892150879,620.395263671875,665.7109375" />
+                                            <GeometryModel3D x:Name="Logo3Geo1"
+            									Geometry="{StaticResource Logo3Geometry3D}"
+            									Material="{StaticResource MaterialBlack}"
+            									d:Bounds="-222.667587280273,-285.424499511719,2111.57543945313,58.8603057861328,136.99479675293,65.277099609375" />
+                                            <GeometryModel3D x:Name="UpperArmTwistMotorGeo1"
+            									Geometry="{StaticResource UpperArmTwistMotorGeometry3D}"
+            									Material="{StaticResource MaterialOrange}"
+            									d:Bounds="-528.303527832031,-314.338562011719,1851.21606445313,281.023468017578,129.999984741211,233.66455078125" />
+                                            <GeometryModel3D x:Name="UpperArmMotorGeometry1"
+            									Geometry="{StaticResource UpperArmMotorGeometry3D}"
+            									Material="{StaticResource MaterialBlack}"
+            									d:Bounds="-429.461364746094,-146.856552124023,1736.302734375,217.394439697266,269.000022888184,217.39453125" />
+                                        </Model3DGroup>
+                                    </ModelVisual3D.Content>
+                                </ModelVisual3D>
+
+                                <ModelVisual3D x:Name="Ban_tay">
+                                    <ModelVisual3D.Transform>
+                                        <RotateTransform3D CenterX="-320" CenterZ="2080">
+                                            <RotateTransform3D.Rotation>
+                                                <AxisAngleRotation3D Angle="{Binding Robot1Axis4}" Axis="100,0,57" />
+                                            </RotateTransform3D.Rotation>
+                                        </RotateTransform3D>
+                                    </ModelVisual3D.Transform>
+
+                                    <ModelVisual3D x:Name="Co_tay">
+                                        <ModelVisual3D.Content>
+                                            <Model3DGroup>
+                                                <GeometryModel3D x:Name="UpperArmGeo1"
+            										Geometry="{StaticResource UpperArmGeometry3D}"
+            										Material="{StaticResource MaterialOrange}"
+            										d:Bounds="-1551.55737304688,-170.356536865234,1334.36389160156,984.0791015625,350.994964599609,668.015502929688" />
+                                                <GeometryModel3D x:Name="Logo1Geo1"
+            										Geometry="{StaticResource Logo1Geometry3D}"
+            										Material="{StaticResource MaterialBlack}"
+            										d:Bounds="-1444.01745605469,148.643463134766,1409.50939941406,48.5592041015625,33.75,123.309936523438" />
+                                                <GeometryModel3D x:Name="Logo2Geo1"
+            										Geometry="{StaticResource Logo2Geometry3D}"
+            										Material="{StaticResource MaterialBlack}"
+            										d:Bounds="-1437.92419433594,-174.106536865234,1435.43371582031,111.3125,33.75,96.415771484375" />
+                                            </Model3DGroup>
+                                        </ModelVisual3D.Content>
+                                    </ModelVisual3D>
+
+                                    <ModelVisual3D x:Name="Ngon_tay">
+                                        <ModelVisual3D.Transform>
+                                            <Transform3DGroup>
+                                                <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                                <ScaleTransform3D ScaleZ="1.371"/>
+                                                <RotateTransform3D d:EulerAngles="0,0,0">
+                                                    <RotateTransform3D.Rotation>
+                                                        <AxisAngleRotation3D Axis="0,1,0" Angle="0"/>
+                                                    </RotateTransform3D.Rotation>
+                                                </RotateTransform3D>
+                                                <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                                <TranslateTransform3D OffsetZ="-588.696"/>
+                                            </Transform3DGroup>
+                                        </ModelVisual3D.Transform>
+
+                                        <ModelVisual3D x:Name="Wrist1">
+                                            <ModelVisual3D.Transform>
+                                                <Transform3DGroup>
+                                                    <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                                    <ScaleTransform3D ScaleZ="1" ScaleY="1" ScaleX="1"/>
+                                                    <RotateTransform3D d:EulerAngles="0,0,0">
+                                                        <RotateTransform3D.Rotation>
+                                                            <AxisAngleRotation3D Axis="0,1,0" Angle="0"/>
+                                                        </RotateTransform3D.Rotation>
+                                                    </RotateTransform3D>
+                                                    <TranslateTransform3D OffsetZ="0" OffsetX="0" OffsetY="0"/>
+                                                    <TranslateTransform3D OffsetZ="-24.849"/>
+                                                </Transform3DGroup>
+                                            </ModelVisual3D.Transform>
+                                            <ModelVisual3D.Content>
+                                                <Model3DGroup>
+                                                    <GeometryModel3D x:Name="WristGeo1"
+            											Geometry="{StaticResource WristGeometry3D}"
+            											Material="{StaticResource MaterialOrange}"
+            											d:Bounds="-1519.89184570313,-97.3565521240234,1307.69262695313,205.024658203125,192,288.381225585938" />
+                                                    <GeometryModel3D x:Name="ToolFlangeGeo1"
+            											Geometry="{StaticResource ToolFlangeGeometry3D}"
+            											Material="{StaticResource MaterialOrange}"
+            											d:Bounds="-1517.31372070313,-100.356544494629,1270.67028808594,200.020385742188,200.000007629395,37.17138671875" />
+                                                </Model3DGroup>
+                                            </ModelVisual3D.Content>
+                                        </ModelVisual3D>
+                                    </ModelVisual3D>
+                                </ModelVisual3D>
+                            </ModelVisual3D>
+                        </ModelVisual3D>
+                    </ModelVisual3D>
+                </ModelVisual3D>
+            </Viewport3D>
+        </Grid>
+        <Grid x:Name="Controler" Grid.Column="1" Grid.RowSpan="2">
+            <StackPanel Margin="0,30,10,165" Orientation="Vertical">
+                <Label Content="You can control now" 
+                       Foreground="White"
+                       Visibility="{Binding IsCanControl, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <Border Margin="0,0,10,0" VerticalAlignment="Top"
+                        IsEnabled="{Binding IsCanControl}"
+        			BorderThickness="1"  BorderBrush="White" Padding="5">
+                    <Grid Height="112">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0"
+        					Grid.Column="0"
+        					Text="Axis 1, °" Foreground="White" VerticalAlignment="Center" />
+                        <Slider Grid.Row="0"
+        					Grid.Column="1"
+        					Margin="0,2"
+        					AutoToolTipPlacement="TopLeft"
+        					IsSelectionRangeEnabled="True"
+        					Maximum="180"
+        					Minimum="-180"
+        					SelectionEnd="{Binding Robot1Axis1}"
+        					SelectionStart="{Binding Robot1Axis1}"
+        					TickFrequency="30"
+        					TickPlacement="TopLeft"
+        					Value="{Binding Robot1Axis1}" Foreground="White" />
+                        <TextBlock Grid.Row="1"
+        					Grid.Column="0"
+        					Text="Axis 2, °" Foreground="White" VerticalAlignment="Center" />
+                        <Slider Grid.Row="1"
+        					Grid.Column="1"
+        					Margin="0,2"
+        					AutoToolTipPlacement="TopLeft"
+        					IsSelectionRangeEnabled="True"
+        					LargeChange="5"
+        					Maximum="45"
+        					Minimum="-45"
+        					SelectionEnd="{Binding Robot1Axis2}"
+        					SelectionStart="{Binding Robot1Axis2}"
+        					TickFrequency="15"
+        					TickPlacement="TopLeft"
+        					Value="{Binding Robot1Axis2}" Foreground="White" />
+                        <TextBlock Grid.Row="2"
+        					Grid.Column="0"
+        					Text="Axis 3, °" Foreground="White" VerticalAlignment="Center" />
+                        <Slider Grid.Row="2"
+        					Grid.Column="1"
+        					Margin="0,2"
+        					AutoToolTipPlacement="TopLeft"
+        					IsSelectionRangeEnabled="True"
+        					Maximum="45"
+        					Minimum="-45"
+        					SelectionEnd="{Binding Robot1Axis3}"
+        					SelectionStart="{Binding Robot1Axis3}"
+        					TickFrequency="15"
+        					TickPlacement="TopLeft"
+        					Value="{Binding Robot1Axis3}" Foreground="White" />
+                        <TextBlock Grid.Row="3"
+        					Grid.Column="0"
+        					Text="Axis 4, °" Foreground="White" VerticalAlignment="Center" />
+                        <Slider Grid.Row="3"
+        					Grid.Column="1"
+        					Margin="0,2"
+        					AutoToolTipPlacement="TopLeft"
+        					IsSelectionRangeEnabled="True"
+        					LargeChange="10"
+        					Maximum="180"
+        					Minimum="-180"
+        					SelectionEnd="{Binding Robot1Axis4, Mode=OneWay}"
+        					SelectionStart="{Binding Robot1Axis4, Mode=OneWay}"
+        					SmallChange="5"
+        					TickFrequency="30"
+        					TickPlacement="TopLeft"
+        					Value="{Binding Robot1Axis4}" Foreground="White" />
+                    </Grid>
+                </Border>
+
+                <CheckBox IsChecked="{Binding IsRuning}" 
+                          Content="IsRuning" Foreground="White" Margin="5,10,0,0" Cursor="Hand"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="Info" Grid.Row="1" Grid.ColumnSpan="2">
+            <WrapPanel>
+                <StackPanel Orientation="Horizontal" Margin="3">
+                    <TextBlock Text="Axis 1, °" Foreground="White" VerticalAlignment="Center" Width="50" />
+                    <TextBox Text="{Binding Robot1Axis1}" Width="100" Margin="3"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="3">
+                    <TextBlock Text="Axis 2, °" Foreground="White" VerticalAlignment="Center" Width="50" />
+                    <TextBox Text="{Binding Robot1Axis2}" Width="100" Margin="3"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="3">
+                    <TextBlock Text="Axis 3, °" Foreground="White" VerticalAlignment="Center" Width="50" />
+                    <TextBox Text="{Binding Robot1Axis3}" Width="100" Margin="3"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="3">
+                    <TextBlock Text="Axis 4, °" Foreground="White" VerticalAlignment="Center" Width="50" />
+                    <TextBox Text="{Binding Robot1Axis4}" Width="100" Margin="3"/>
+                </StackPanel>
+            </WrapPanel>
+        </Grid>
+    </Grid>
+</Window>
